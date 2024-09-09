@@ -66,10 +66,6 @@ func main() {
 	app.Patch("/api/todos/:id", updateTodo)
 	app.Delete("/api/todos/:id", deleteTodo)
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
-	})
-
 	port := strings.TrimSpace(os.Getenv("PORT"))
 	if port == "" {
 		port = "3000"
